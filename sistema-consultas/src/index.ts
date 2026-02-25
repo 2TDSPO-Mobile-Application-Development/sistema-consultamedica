@@ -45,6 +45,16 @@ function confirmarConsulta(consulta: Consulta): Consulta {
   };
 }
 
+function cancelarConsulta(consulta: Consulta): Consulta | null {
+  if (consulta.status === "realizada") {
+    return null;
+  }
+  return {
+    ...consulta,
+    status: "cancelada",
+  };
+}
+
 const consulta1 = criarConsulta(
   1,
   medico1,
@@ -55,3 +65,9 @@ const consulta1 = criarConsulta(
 const consultaConfirmada = confirmarConsulta(consulta1);
 console.log("=== CONSULTA CONFIRMADA ===");
 console.log(exibirConsulta(consultaConfirmada));
+
+
+
+
+
+
