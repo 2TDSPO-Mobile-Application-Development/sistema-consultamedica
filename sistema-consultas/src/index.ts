@@ -38,10 +38,12 @@ function criarConsulta(
     status: "Agendada",
   };
 }
-
-//
-// MACEDO
-//
+function confirmarConsulta(consulta: Consulta): Consulta {
+  return {
+    ...consulta,
+    status: "confirmada",
+  };
+}
 
 const consulta1 = criarConsulta(
   1,
